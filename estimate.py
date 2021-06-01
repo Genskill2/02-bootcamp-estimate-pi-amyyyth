@@ -1,5 +1,25 @@
 import math
 import unittest
+import random
+
+def wallis(n):
+    res = 1
+    for i in range(1,n+1):
+        res = res * ((4*pow(i,2)/((4*pow(i,2))-1)))
+    
+    return 2*res
+        
+def monte_carlo(n):
+    count = 0
+    for i in range(n):
+        x=random.random()
+        y=random.random()
+        dist = math.sqrt(pow(x,2)+pow(y,2))
+        if dist <= 1:
+            count = count + 1
+    
+    return (4*(count/n))
+    
 
 #testng commits
 
